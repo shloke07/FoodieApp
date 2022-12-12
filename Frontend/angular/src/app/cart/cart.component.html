@@ -1,0 +1,100 @@
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../assets/images/logo.jpg" width="60px" height="60px">
+            <a href="" class="header_logo">F<span style="color:#f79f08;">oo</span>diE</a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-three-dots-vertical header_toggle fas fa-bars" id="toggle-menu" viewBox="0 0 16 16">
+                    <path
+                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                </svg>
+            </i>
+
+        </label>
+        <ul>
+            <li><a class="active" routerLink="/user">Home</a></li>
+            <li><a routerLink="/login">LogOut</a></li>
+        </ul>
+    </nav>
+    </body>
+<div class="empty" *ngIf="items.length<1">
+    <div class="info">
+        <p class="display-6">You don't have any items in your cart</p>
+        <i></i>
+        <a routerLink="/user" class="btn btn-success">Browse now</a>
+    </div>
+</div>
+
+<ng-container *ngIf="items.length>0">
+    <!-- table headings -->
+    <div class="cart">
+        <div>
+        <strong>No</strong>
+        </div>
+        <div class="imgBox">
+           
+        </div>
+        <div class="desc">
+            <strong>Item Name</strong>
+        </div>
+        <div></div>
+        <div class="price">
+            <strong>Price</strong>
+        </div>
+        <div class="qty">
+            <strong>Quantity</strong>
+        </div>
+        <div class="subtotal">
+            <strong>Subtotal</strong>
+        </div>
+        <div>
+       
+        </div>
+
+
+    </div>
+
+
+    <!-- cart items -->
+    <div class="cart" *ngFor="let item of items; index as i">
+        <!-- <i class="fa fa-trash text-danger" aria-hidden="true" (click)="onDelete(i)"></i> -->
+        <div>
+            <strong>{{i+1}}.</strong>
+        </div>
+        <div class="imgBox">
+            <img style="border-radius: 80px;" class="img" [src]="'data:image/jpeg;base64,'+item.image">
+        </div>
+        <div class="desc">
+            {{item.cuisineName}}
+        </div>
+        <div class="price">
+            {{item.price|currency:"INR":"symbol"}}
+        </div>
+        <!-- <div class="qty">
+            {{item.qty}}
+        </div> -->
+        <input type="number" class="qty" [value]="item.qty" (mouseleave)="validateInput($event,i)">
+        <div class="subtotal">
+            {{item.price*item.qty|currency:"INR":"symbol"}}
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="color: red;" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16" (click)="onDelete(i)">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+          </svg>
+    </div>
+
+    <div class="checkout">
+        <button class="btn btn-info" routerLink="/user">Add items</button>
+        <button class="btn btn-warning" (click)="removeAllCart()">Clear Cart</button>
+        <div><strong>Total bill</strong></div>
+        <b>{{total |currency:"INR":"symbol"}}</b>
+
+        <button class="btn btn-success" routerLink="/order-address">Place Order</button>
+        
+    </div>
+</ng-container>
+
+

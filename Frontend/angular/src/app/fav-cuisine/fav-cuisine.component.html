@@ -1,0 +1,78 @@
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../assets/images/logo.jpg" width="60px" height="60px">
+            <a href="" class="header_logo">F<span style="color:#f79f08;">oo</span>diE</a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-three-dots-vertical header_toggle fas fa-bars" id="toggle-menu" viewBox="0 0 16 16">
+                    <path
+                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                </svg>
+            </i>
+
+        </label>
+        <ul>
+            <li><a class="active" routerLink="/user">Home</a></li>
+            <li><a routerLink="/login">LogOut</a></li>
+        </ul>
+    </nav>
+
+    <div class="content" style="min-height: 100vh;">
+        <div class="card" *ngFor="let s of items">
+            <div class="info">
+                <div id="name" class="name" style="font-size: 35px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><em>{{s.cuisineName}}</em></div>
+                <div class="prof" style="font-size: 30px;color: #EEB76B"><em>{{s.cuisineDescription}}</em></div>
+                <div class="prof" style="margin-top: 45px; font-size: 25px; color: brown;">{{s.price|currency:"INR":"symbol"}}</div>
+                <div class="divider" style="margin-top: 45px;"></div>
+                <!-- <button id="view">View Restaurant</button> -->
+                <i class="add" (click)="addToCart(s)"><script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/slkvcfos.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#e88c30"
+                        style="width:80px;height:80px">
+                    </lord-icon></i>
+                <i class="delete" (click)="removeFav(s.cuisineId)"><script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/gsqxdxog.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#e88c30"
+                        style="width:80px;height:80px">
+                    </lord-icon></i>
+            </div>
+            <img class="photo" [src]="'data:image/jpeg;base64,'+s.image">
+        </div>
+    </div>
+
+    <ng-container *ngIf="items.length===0">
+        <div class="container">
+            <!-- <div class="card" style="height: 60vh;
+                                     margin: 25px;
+                                     padding: 25px;">
+                <h5 class="card-title">Favourites</h5>
+            </div> -->
+            <div class="center" style=" position: absolute;
+                                        top:50%;
+                                        left:50%;
+                                        transform: translate(-50%,-50%);
+                                        text-align:center;">
+                <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/zkazkzgr.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:250px;height:250px">
+                </lord-icon>
+                <h4 style="color:aliceblue">Hmm, its all empty here...</h4>
+                <h6 style="color:aliceblue">Add your favourite food items and places</h6>
+                <button routerLink="/user" class="btn btn-primary" style="    margin-top: 5px;
+                margin-bottom: 5px;">Discover more</button>
+            </div>
+        </div>
+
+    </ng-container>
+</body>

@@ -1,0 +1,70 @@
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../assets/images/logo.jpg" width="60px" height="60px">
+            <a href="" class="header_logo">F<span style="color:#f79f08;">oo</span>diE</a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-three-dots-vertical header_toggle fas fa-bars" id="toggle-menu" viewBox="0 0 16 16">
+                    <path
+                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                </svg>
+            </i>
+
+        </label>
+        <ul>
+            <li><a class="active" routerLink="/landing">Home</a></li>
+            <li><a routerLink="/signup">SignUp</a></li>
+            <li><a routerLink="/login">SignIn</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="content">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="../../assets/images/4503157.jpg"  class="d-block w-100" alt="..." height="750vh">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="background-color: rgba(255, 255, 255, .7); border:none">Everything tastes good when you're on a diet.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="../../assets/images/food.jpg" class="d-block w-100" alt="..." height="750vh">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="background-color: rgba(255, 255, 255, .7); border:none">A recipe has no soul. You, as the cook, must bring soul to the recipe.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../../assets/images/varah paw.jpg"class="d-block w-100" alt="..."
+                        height="750vh">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="background-color: rgba(255, 255, 255, .7); border:none">Food is symbolic of love when words are inadequate.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</body>

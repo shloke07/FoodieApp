@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Backend.iml" filepath="$PROJECT_DIR$/.idea/Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodieApp/FoodieApp.iml" filepath="$PROJECT_DIR$/FoodieApp/FoodieApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodieApp/apigw/apigw.iml" filepath="$PROJECT_DIR$/FoodieApp/apigw/apigw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodieApp/authUserService/authUserService.iml" filepath="$PROJECT_DIR$/FoodieApp/authUserService/authUserService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodieApp/eureka/eureka.iml" filepath="$PROJECT_DIR$/FoodieApp/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodieApp/restaurantService/restaurantService.iml" filepath="$PROJECT_DIR$/FoodieApp/restaurantService/restaurantService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodieApp/userRestaurantService/userRestaurantService.iml" filepath="$PROJECT_DIR$/FoodieApp/userRestaurantService/userRestaurantService.iml" />
+    </modules>
+  </component>
+</project>
